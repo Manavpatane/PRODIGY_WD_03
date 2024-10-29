@@ -1,0 +1,84 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    color: white;
+    margin: 0;
+}
+
+#startPage {
+    text-align: center;
+}
+
+#gamePage {
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#gameBoard {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+    margin: 20px auto;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #444;
+    font-size: 2em;
+    color: #F1C40F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* Animation for winning cells */
+.win-animation {
+    animation: winFlash 0.5s alternate infinite;
+}
+
+@keyframes winFlash {
+    from { background-color: #4CAF50; }
+    to { background-color: #FFD700; }
+}
+
+/* Animation for losing cells */
+.lose-animation {
+    animation: loseFlash 0.5s alternate infinite;
+}
+
+@keyframes loseFlash {
+    from { background-color: #e74c3c; }
+    to { background-color: #c0392b; }
+}
+
+/* Animation for a tie */
+.tie-animation {
+    animation: tieFlash 0.75s infinite;
+}
+
+@keyframes tieFlash {
+    0% { background-color: #888; }
+    50% { background-color: #555; }
+    100% { background-color: #888; }
+}
